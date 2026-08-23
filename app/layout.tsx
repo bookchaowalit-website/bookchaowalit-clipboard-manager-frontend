@@ -1,37 +1,38 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Karla, Courier_Prime } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const karla = Karla({
+  variable: "--font-karla",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const courier = Courier_Prime({
+  variable: "--font-courier",
+  weight: "400",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Clipboard Manager | Bookchaowalit",
+  title: "Local Dispatch — Clipboard archive",
   description: "Local-only clipboard history snippets stored in localStorage.",
   keywords: ["clipboard","history","snippets","localStorage"],
   authors: [{ name: "Bookchaowalit", url: "https://bookchaowalit.com" }],
   creator: "Bookchaowalit",
   publisher: "Bookchaowalit",
-  metadataBase: new URL("https://bookchaowalit.com"),
+  metadataBase: new URL("https://clipboard-manager.bookchaowalit.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "Clipboard Manager | Bookchaowalit",
+    title: "Local Dispatch — Clipboard archive",
     description: "Local-only clipboard history snippets stored in localStorage.",
     siteName: "Bookchaowalit",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Clipboard Manager | Bookchaowalit",
+    title: "Local Dispatch — Clipboard archive",
     description: "Local-only clipboard history snippets stored in localStorage.",
     creator: "@bookchaowalit",
   },
@@ -45,7 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${karla.variable} ${courier.variable}`}>
         <Analytics />
         <SpeedInsights />
         {children}
